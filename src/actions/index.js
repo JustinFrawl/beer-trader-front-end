@@ -30,6 +30,15 @@ export const fetchAllBeers = () => dispatch => {
   })
 }
 
+export const fetchAllTrades = () => dispatch => {
+  dispatch({type: 'ASYNC_START'});
+  console.log("details happening");
+  adapter.auth.getAllTrades()
+  .then(user => {
+
+    dispatch({ type: 'SET_ALL_TRADES', user })
+  })
+}
 
 export const loginUser = (user_name, password, history) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
@@ -44,6 +53,18 @@ export const loginUser = (user_name, password, history) => dispatch => {
   // })
 };
 
+export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiver_beer_id, status) => dispatch => {
+  dispatch({ type: 'ASYNC_START' });
+  console.log('it happened')
+  adapter.auth.createTrade({ creator_id, receiver_id, creator_beer_id, receiver_beer_id, status }).then(user => {
+    // localStorage.setItem('token', user.jwt);
+    dispatch({ type: 'SET_NEW_TRADE', user });
+    // history.push('/profile');
+  });
+  // adapter.auth.getAllUsers().then(users => {
+  //   dispatch({users})
+  // })
+};
 
 // export const fetchUsers = () => dispatch => {
 //   dispatch({type: 'ASYNC_START'});

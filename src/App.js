@@ -6,8 +6,9 @@ import Profile from './Profile';
 import Users from './Users';
 import * as actions from './actions';
 import UserBeers from './UserBeers';
-import UserTrades from './UserTrades';
+import NewTradeForm from './NewTradeForm.js';
 import SearchBeers from './SearchBeers';
+import { Header } from 'semantic-ui-react';
 
 class App extends Component {
   render() {
@@ -16,8 +17,9 @@ class App extends Component {
 
 
         <h2>Welcome to the App</h2>
+        <Header as='h2' icon textAlign='center'>
         <ul>
-          <li>
+
             {this.props.loggedIn ? (
               <a
                 onClick={e => {
@@ -31,25 +33,26 @@ class App extends Component {
             ) : (
               <Link to="/login">Go to Login</Link>
             )}
-          </li>
-          <li>
+
+
             <Link to="/profile">Go to Profile</Link>
-          </li>
-          <li>
+
+
             <Link to="/users">Go to Users</Link>
-          </li>
-          <li>
-            <Link to="/trades">Look at My Pending Trades!</Link>
-          </li>
-          <li>
+
+
+            <Link to="/trades">Start a New Trade</Link>
+
+
             <Link to='/mybeer'>Look at My Beers!</Link>
-          </li>
+
         </ul>
+        </Header>
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
           <Route path="/users" component={Users} />
-          <Route path="/trades" component={UserTrades} />
+          <Route path="/trades" component={NewTradeForm} />
           <Route path="/search" component={SearchBeers} />
           <Route path="/mybeer" component={UserBeers} />
         </Switch>

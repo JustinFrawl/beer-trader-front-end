@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import withAuth from './hocs/withAuth';
 import { Link, Switch, Route } from 'react-router-dom';
 import UserBeers from './UserBeers';
-import UserTrades from './UserTrades';
+import NewTradeForm from './NewTradeForm';
 import SearchBeers from './SearchBeers';
 
 class Profile extends Component {

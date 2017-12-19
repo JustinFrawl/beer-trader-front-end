@@ -30,6 +30,10 @@ const getAllBeers = () => {
    .then(res => res.json())
 }
 
+const getAllTrades = () => {
+  return fetch(`${API_ROOT}/trades/`)
+   .then(res => res.json())
+}
 
 
 export function fetchProfile(userId) {
@@ -58,12 +62,22 @@ const login = data => {
   }).then(res => res.json());
 };
 
+const createTrade = data => {
+  return fetch(`${API_ROOT}/trades/`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+};
+
 export const adapter = {
   auth: {
     login,
     getCurrentUser,
     getAllUsers,
     fetchProfile,
-    getAllBeers
+    getAllBeers,
+    getAllTrades,
+    createTrade
   }
 };

@@ -1,5 +1,6 @@
 import React from 'react'
 import withAuth from './hocs/withAuth';
+import Beer from './Beer.js';
 
 
 const SearchBeers = ({beers}) => {
@@ -12,10 +13,13 @@ if(!beers){
 }
 const beerListItems = beers.map((beer) => {
   return (
-    <li>
-    {beer.name}:
-    {beer.description}
-    </li>
+
+    <Beer
+        // onAuctionSelect={props.onAuctionSelect}
+        key={beer.id}
+        beer={beer}
+      />
+
   )
 });
 return(

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -24,6 +24,11 @@ const authReducer = (state = initialState, action) => {
     case 'SET_ALL_BEERS':
       const beers = action.user;
       return { ...state, beers: beers};
+    case 'SET_ALL_TRADES':
+      const trades = action.user;
+      return { ...state, trades: trades};
+    case 'SET_NEW_TRADE':
+      const trade = action.user;
 
     default:
       return state;
