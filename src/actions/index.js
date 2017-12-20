@@ -78,6 +78,19 @@ export const createUserBeer = ( name, description, abv, style ) => dispatch => {
   //   dispatch({users})
   // })
 };
+export const addUserBeer = ( user_id, beer_id ) => dispatch => {
+  dispatch({ type: 'ASYNC_START' });
+  console.log('it happened')
+  adapter.auth.addBeer({  user_id, beer_id  }).then(user => {
+    // localStorage.setItem('token', user.jwt);
+    dispatch({ type: 'ADD_BEER_TO_USER', user });
+    // history.push('/profile');
+  });
+  // adapter.auth.getAllUsers().then(users => {
+  //   dispatch({users})
+  // })
+};
+
 
 // export const fetchUsers = () => dispatch => {
 //   dispatch({type: 'ASYNC_START'});

@@ -5,21 +5,23 @@ import { Link } from 'react-router-dom';
 
 
 
-const SearchBeers = ({beers}) => {
-if(!beers){
+const SearchBeers = (props) => {
+if(!props.beers){
   return(
     <h2>
       Please wait one sec while we check the records
     </h2>
   )
 }
-const beerListItems = beers.map((beer) => {
+const beerListItems = props.beers.map((beer) => {
   return (
 
     <Beer
         // onAuctionSelect={props.onAuctionSelect}
         key={beer.id}
         beer={beer}
+        user={props.user}
+        addUserBeer={props.addUserBeer}
       />
 
   )

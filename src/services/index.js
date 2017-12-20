@@ -78,6 +78,14 @@ const createBeer = data => {
   }).then(res => res.json());
 };
 
+const addBeer = data => {
+  return fetch(`${API_ROOT}/beer_lists/`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+};
+
 export const adapter = {
   auth: {
     login,
@@ -87,6 +95,7 @@ export const adapter = {
     getAllBeers,
     getAllTrades,
     createTrade,
-    createBeer
+    createBeer,
+    addBeer
   }
 };
