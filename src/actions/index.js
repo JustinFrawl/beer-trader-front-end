@@ -66,6 +66,19 @@ export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiv
   // })
 };
 
+export const createUserBeer = ( name, description, abv, style ) => dispatch => {
+  dispatch({ type: 'ASYNC_START' });
+  console.log('it happened')
+  adapter.auth.createBeer({  name, description, abv, style  }).then(user => {
+    // localStorage.setItem('token', user.jwt);
+    dispatch({ type: 'SET_NEW_BEER', user });
+    // history.push('/profile');
+  });
+  // adapter.auth.getAllUsers().then(users => {
+  //   dispatch({users})
+  // })
+};
+
 // export const fetchUsers = () => dispatch => {
 //   dispatch({type: 'ASYNC_START'});
 //   adapter.auth.getAllUsers().then(users => {

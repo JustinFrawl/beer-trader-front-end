@@ -29,6 +29,8 @@ const authReducer = (state = initialState, action) => {
       return { ...state, trades: trades};
     case 'SET_NEW_TRADE':
       const trade = action.user;
+    case 'SET_NEW_BEER':
+      const beer = action.user;
 
     default:
       return state;
