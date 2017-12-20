@@ -21,6 +21,9 @@ render() {
       <li>
         <Link to="/search">Look for Beers to Trade!</Link>
       </li>
+      <li>
+        <Link to="/mytrades">Look at Your Trade History!</Link>
+      </li>
 
 
       </ul>

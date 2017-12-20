@@ -30,10 +30,33 @@ class NewTradeForm extends React.Component {
     this.setState({ fields: newFields });
   };
 
+  convertUserName = e => {
+    const receiver_name = this.state.fields.receiver_id
+    const user = this.props.users.filter(user => user.user_name === receiver_name)
+      return user[0].id
+
+  }
+  convertSenderBeerName = e => {
+    const beer_name = this.state.fields.creator_beer_id
+    const beer = this.props.beers.filter(beer => beer.name === beer_name)
+    debugger
+    return beer[0].id
+  }
+
+  convertRecevierBeerName = e => {
+    const beer_name = this.state.fields.receiver_beer_id
+    const beer = this.props.beers.filter(beer => beer.name === beer_name)
+    debugger
+    return beer[0].id
+  }
+
   handleSubmit = e => {
     e.preventDefault();
+    const receiver = this.convertUserName(receiver_id)
+    const creator_beer = this.convertSenderBeerName(creator_beer_id)
+    const receiver_beer = this.convertReceiverBeerName(receiver_beer_id)
     const { fields: { creator_id, receiver_id, creator_beer_id, receiver_beer_id, status } } = this.state;
-    this.props.createUserTrade(creator_id, receiver_id, creator_beer_id, receiver_beer_id, status);
+    this.props.createUserTrade(creator_id, receiver, creator_beer, receiver_beer, status);
 
   };
 
