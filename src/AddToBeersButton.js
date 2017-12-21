@@ -16,7 +16,6 @@ class AddToBeersButton extends React.Component {
     }
   }
   handleClick = e => {
-    console.log(this.state)
     const { fields: { user_id, beer_id } } = this.state;
     this.props.addUserBeer(user_id, beer_id);
 
@@ -29,7 +28,6 @@ class AddToBeersButton extends React.Component {
     //     </h2>
     //   )
     // }
-    console.log(this.props)
     return (
     <div>
       <Button

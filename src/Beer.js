@@ -3,15 +3,19 @@ import { Button, Segment } from 'semantic-ui-react'
 import AddToBeersButton from './AddToBeersButton.js';
 
 const Beer = (props) => {
-  {console.log(props)}
   return (
     <Segment attached>
-        {props.beer.name}
         <AddToBeersButton
           beerID={props.beer.id}
           userID={props.user.id}
           addUserBeer={props.addUserBeer}
         />
+        <li>
+        {props.beer.name}
+        </li>
+        <li>
+        {props.beer.description}
+        </li>
     </Segment>
   )
 }

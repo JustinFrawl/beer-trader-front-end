@@ -53,6 +53,17 @@ export const loginUser = (user_name, password, history) => dispatch => {
   // })
 };
 
+export const registerUser = (user_name, password, history) => dispatch => {
+  dispatch({ type: 'ASYNC_START' });
+  console.log('it happened')
+  adapter.auth.register({user : { user_name, password }}).then(user => {
+    dispatch({ type: 'REGISTER_USER', user });
+  });
+  // adapter.auth.getAllUsers().then(users => {
+  //   dispatch({users})
+  // })
+};
+
 export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiver_beer_id, status) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
   console.log('it happened')

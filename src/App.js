@@ -11,6 +11,7 @@ import SearchBeers from './SearchBeers';
 import { Header } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import NewBeerForm from './NewBeerForm.js';
+import RegisterUser from './RegisterUser.js';
 
 class App extends Component {
   render() {
@@ -33,7 +34,10 @@ class App extends Component {
                 Sign Out
               </a>
             ) : (
+              <div>
               <Link to="/login">Go to Login</Link>
+              <Link to="/register">New? Create an Account Here</Link>
+              </div>
             )}
 
 
@@ -51,6 +55,7 @@ class App extends Component {
         </ul>
         </Header>
         <Switch>
+          <Route path="/register" component={RegisterUser} />
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
           <Route path="/users" component={Users} />

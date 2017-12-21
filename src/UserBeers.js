@@ -22,7 +22,6 @@ const renderBeer = userBeerList[0].beers.map(beer => {
 });
 
 
-  console.log(renderBeer)
 
 
 

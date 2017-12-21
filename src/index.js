@@ -33,6 +33,8 @@ const authReducer = (state = initialState, action) => {
       const beer = action.user;
     case 'ADD_BEER_TO_USER':
       const addedBeer = action.user;
+    case 'REGISTER_USER':
+      const newUser = action.user;
 
     default:
       return state;

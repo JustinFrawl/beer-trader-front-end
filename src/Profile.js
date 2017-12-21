@@ -28,7 +28,6 @@ render() {
 
       </ul>
 
-      {console.log(this.props)}
 
     </div>
   );

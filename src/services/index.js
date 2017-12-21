@@ -62,6 +62,14 @@ const login = data => {
   }).then(res => res.json());
 };
 
+const register = data => {
+  return fetch(`${API_ROOT}/users/`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+};
+
 const createTrade = data => {
   return fetch(`${API_ROOT}/trades/`, {
     method: 'POST',
@@ -96,6 +104,7 @@ export const adapter = {
     getAllTrades,
     createTrade,
     createBeer,
-    addBeer
+    addBeer,
+    register
   }
 };
