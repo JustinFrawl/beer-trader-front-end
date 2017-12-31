@@ -31,7 +31,7 @@ return (
     </Card.Content>
     <Card.Content extra>
       <a>
-        <Icon name='beer' float='center' />
+        <button>View This Trade</button>
 
       </a>
     </Card.Content>

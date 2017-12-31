@@ -13,6 +13,7 @@ componentDidMount = (props) => {
 
 
 render() {
+  console.log(this.props)
   return (
     <div>
       <h1>Welcome {this.props.user.user_name}!</h1>

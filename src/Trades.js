@@ -19,7 +19,6 @@ const Trades = (props) => {
     const receiverBeer = props.beers.filter(beer => beer.id === trade.receiver_beer_id)
     return (
       <li>
-    hey there handsome
     <Trade
       trade={trade}
       initiator={initiator}

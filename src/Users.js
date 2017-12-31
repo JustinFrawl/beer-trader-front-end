@@ -30,6 +30,7 @@ const userList = props.users.map((user) => {
         key={user.id}
         selectedUser={user}
         user={props.user}
+        beers={props.user.beers}
       />
   )
 });

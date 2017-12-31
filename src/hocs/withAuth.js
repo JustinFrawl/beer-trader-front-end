@@ -15,6 +15,7 @@ const withAuth = WrappedComponent => {
         this.props.fetchAllUsers();
         this.props.fetchAllBeers();
         this.props.fetchAllTrades();
+        this.props.fetchAllMessages();
         console.log(!!this.props.user.user_name, this.props)
         // this.props.fetchProfile(state.auth.currentUser.id)
         // this.props.fetchUsers();
@@ -52,7 +53,8 @@ const withAuth = WrappedComponent => {
     user: state.auth.currentUser,
     users: state.auth.users,
     beers: state.auth.beers,
-    trades: state.auth.trades
+    trades: state.auth.trades,
+    messages: state.auth.messages
 
     // users: state.auth.
   });

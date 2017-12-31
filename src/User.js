@@ -1,5 +1,4 @@
 import React from 'react';
-import Beer from './Beer.js';
 import { Button, Segment } from 'semantic-ui-react'
 
 const User = (props) => {
@@ -8,21 +7,22 @@ const User = (props) => {
   // }
   const thisBeerList = props.selectedUser.beers.map(beer => {
     return (
-      <Beer
-        key={beer.id}
-        beer={beer}
-      />
+      <li>
+        {beer.name}
+      </li>
     )
   })
   return (
     <Segment attached>
-        {props.selectedUser.user_name}
+
         <Button
           positive
           floated='right'
           >
             View beers for trade!
         </Button>
+        <h3>{props.selectedUser.user_name}</h3>
+        {thisBeerList}
     </Segment>
   )
 }

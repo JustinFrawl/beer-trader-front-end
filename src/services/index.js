@@ -35,6 +35,11 @@ const getAllTrades = () => {
    .then(res => res.json())
 }
 
+const getAllMessages = () => {
+  return fetch(`${API_ROOT}/messages/`)
+   .then(res => res.json())
+}
+
 
 export function fetchProfile(userId) {
   return function(dispatch) {
@@ -105,6 +110,7 @@ export const adapter = {
     createTrade,
     createBeer,
     addBeer,
-    register
+    register,
+    getAllMessages
   }
 };

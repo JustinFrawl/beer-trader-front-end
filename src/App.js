@@ -12,6 +12,9 @@ import { Header } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import NewBeerForm from './NewBeerForm.js';
 import RegisterUser from './RegisterUser.js';
+import Messages from './Messages.js';
+import TradesContainer from './TradesContainer.js';
+
 
 class App extends Component {
   render() {
@@ -19,7 +22,7 @@ class App extends Component {
       <div className="App">
 
 
-        <h2>Beer Trader, Pokemon Cards for the Grown Man</h2>
+        <h2 textAlign='center'>Beer Trader, Pokemon Cards for the Grown Man</h2>
         <Header as='h2' icon textAlign='center'>
         <ul>
 
@@ -35,22 +38,25 @@ class App extends Component {
               </a>
             ) : (
               <div>
-              <Link to="/login">Go to Login</Link>
-              <Link to="/register">New? Create an Account Here</Link>
+              <Link to="/login">/ Go to Login</Link>
+              <Link to="/register">/ New? Create an Account Here</Link>
               </div>
             )}
 
 
-            <Link to="/profile">Go to Profile</Link>
+            <Link to="/profile">/ Go to Profile</Link>
 
 
-            <Link to="/users">Go to Users</Link>
+            <Link to="/users">/ Go to Users</Link>
 
 
-            <Link to="/trades">Start a New Trade</Link>
+            <Link to="/trades">/ Start a New Trade</Link>
 
 
-            <Link to='/mybeer'>Look at My Beers!</Link>
+            <Link to='/mybeer'>/ Look at My Beers!</Link>
+
+            <Link to='/inbox'>/ Inbox</Link>
+
 
         </ul>
         </Header>
@@ -62,8 +68,9 @@ class App extends Component {
           <Route path="/trades" component={NewTradeForm} />
           <Route path="/search" component={SearchBeers} />
           <Route path="/mybeer" component={UserBeers} />
-          <Route path="/mytrades" component={Trades} />
+          <Route path="/mytrades" component={TradesContainer} />
           <Route path="/newbeer" component={NewBeerForm} />
+          <Route path="/inbox" component={Messages} />
         </Switch>
       </div>
     );

@@ -35,6 +35,9 @@ const authReducer = (state = initialState, action) => {
       const addedBeer = action.user;
     case 'REGISTER_USER':
       const newUser = action.user;
+    case 'SET_ALL_MESSAGES':
+      const messages = action.user;
+      return {...state, messages: messages};
 
     default:
       return state;

@@ -40,6 +40,16 @@ export const fetchAllTrades = () => dispatch => {
   })
 }
 
+export const fetchAllMessages = () => dispatch => {
+  dispatch({type: 'ASYNC_START'});
+  console.log("messages retrieved");
+  adapter.auth.getAllMessages()
+  .then(user => {
+
+    dispatch({ type: 'SET_ALL_MESSAGES', user })
+  })
+}
+
 export const loginUser = (user_name, password, history) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
   console.log('it happened')

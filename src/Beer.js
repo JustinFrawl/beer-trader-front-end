@@ -3,6 +3,12 @@ import { Button, Segment } from 'semantic-ui-react'
 import AddToBeersButton from './AddToBeersButton.js';
 
 const Beer = (props) => {
+  console.log('in beer', props)
+  if(!props.beer || !props.user){
+    <div>
+      loading
+    </div>
+  }
   return (
     <Segment attached>
         <AddToBeersButton

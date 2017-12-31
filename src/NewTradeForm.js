@@ -38,14 +38,12 @@ class NewTradeForm extends React.Component {
   convertSenderBeerName = e => {
     const beer_name = this.state.fields.creator_beer_id
     const beer = this.props.beers.filter(beer => beer.name === beer_name)
-    debugger
     return beer[0].id
   }
 
   convertRecevierBeerName = e => {
     const beer_name = this.state.fields.receiver_beer_id
     const beer = this.props.beers.filter(beer => beer.name === beer_name)
-    debugger
     return beer[0].id
   }
 
