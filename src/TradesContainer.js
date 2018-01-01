@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import withAuth from './hocs/withAuth.js';
 import { Grid, Segment } from 'semantic-ui-react';
 import Trades from './Trades.js';
@@ -38,6 +39,7 @@ componentDidMount(){
                   <Grid.Column width={3}>
 
               <Segment>
+              <Link to="/trades">Start a New Trade</Link>
               <Trades
                 onTradeSelect={selectedTrade => this.setState({selectedTrade})}
                 />
@@ -46,11 +48,11 @@ componentDidMount(){
             <Grid.Column width={13}>
               <TradeDetail
                 trade={this.state.selectedTrade}
+                user={this.props.user}
                 users={this.props.users}
                 beers={this.props.beers}
                 grabTradeId={this.grabTradeId}
                 currentUser={this.props.user}
-                userList={this.props.users}
                 refreshBid={this.bidRefresh}
                 />
             </Grid.Column>

@@ -50,7 +50,6 @@ class App extends Component {
             <Link to="/users">/ Go to Users</Link>
 
 
-            <Link to="/trades">/ Start a New Trade</Link>
 
 
             <Link to='/mybeer'>/ Look at My Beers!</Link>

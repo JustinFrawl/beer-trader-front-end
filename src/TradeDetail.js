@@ -1,6 +1,8 @@
 import React from 'react';
+import Message from './Message.js';
+import NewMessageForm from './NewMessageForm.js';
 
-import { Grid, Segment, Image, Header, Message } from 'semantic-ui-react'
+import { Grid, Segment, Image, Header } from 'semantic-ui-react'
 
 
 const TradeDetail = (props) => {
@@ -22,12 +24,33 @@ const TradeDetail = (props) => {
   const traderName = receiver[0].user_name
   const userBeer = initiatorBeer[0].name
   const traderBeer = receiverBeer[0].name
+  const messageList = props.trade.messages.map(message => {
+     const senderName = props.users.filter(user => user.id === message.user_id)
+     console.log(senderName)
+     return (
+       <div>
+       <Message
+        key={message.id}
+        senderName={senderName}
+        message={message}
+        />
+      </div>
+
+     )
+   }
+)
 
   return(
 
     <div>
-    {console.log(props)}
     {userName} is trading {traderName}, {userBeer} for {traderBeer}
+    {messageList}
+    <NewMessageForm
+      traderName={traderName}
+      receiver_id={receiver[0].id}
+      sender_id={initiator[0].id}
+      trade={props.trade}
+    />
 
     </div>
   )

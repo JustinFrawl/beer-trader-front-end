@@ -99,6 +99,20 @@ export const createUserBeer = ( name, description, abv, style ) => dispatch => {
   //   dispatch({users})
   // })
 };
+
+export const createUserMessage = ( user_id, receiver_id, trade_id, content ) => dispatch => {
+  dispatch({ type: 'ASYNC_START' });
+  console.log('it happened')
+  adapter.auth.createMessage({  user_id, receiver_id, trade_id, content  }).then(user => {
+    // localStorage.setItem('token', user.jwt);
+    dispatch({ type: 'SET_NEW_MESSAGE', user });
+    // history.push('/profile');
+  });
+  // adapter.auth.getAllUsers().then(users => {
+  //   dispatch({users})
+  // })
+};
+
 export const addUserBeer = ( user_id, beer_id ) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
   console.log('it happened')

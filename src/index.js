@@ -38,6 +38,8 @@ const authReducer = (state = initialState, action) => {
     case 'SET_ALL_MESSAGES':
       const messages = action.user;
       return {...state, messages: messages};
+    case 'SET_NEW_MESSAGE':
+      const message = action.user;
 
     default:
       return state;

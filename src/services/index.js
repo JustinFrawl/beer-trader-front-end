@@ -91,6 +91,14 @@ const createBeer = data => {
   }).then(res => res.json());
 };
 
+const createMessage = data => {
+  return fetch(`${API_ROOT}/messages/`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+};
+
 const addBeer = data => {
   return fetch(`${API_ROOT}/beer_lists/`, {
     method: 'POST',
@@ -111,6 +119,7 @@ export const adapter = {
     createBeer,
     addBeer,
     register,
-    getAllMessages
+    getAllMessages,
+    createMessage
   }
 };
