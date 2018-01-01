@@ -25,6 +25,7 @@ const Trades = (props) => {
       receiver={receiver}
       initiatorBeer={initiatorBeer}
       receiverBeer={receiverBeer}
+      onTradeSelect={props.onTradeSelect}
       />
       </li>
     )

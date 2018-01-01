@@ -31,7 +31,10 @@ return (
     </Card.Content>
     <Card.Content extra>
       <a>
-        <button>View This Trade</button>
+        <button
+          onClick={() => props.onTradeSelect(props.trade)}>
+            View This Trade
+        </button>
 
       </a>
     </Card.Content>

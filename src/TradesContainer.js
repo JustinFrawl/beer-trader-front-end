@@ -39,13 +39,15 @@ componentDidMount(){
 
               <Segment>
               <Trades
-                onAuctionSelect={selectedAuction => this.setState({selectedAuction})}
+                onTradeSelect={selectedTrade => this.setState({selectedTrade})}
                 />
               </Segment>
             </Grid.Column>
             <Grid.Column width={13}>
               <TradeDetail
                 trade={this.state.selectedTrade}
+                users={this.props.users}
+                beers={this.props.beers}
                 grabTradeId={this.grabTradeId}
                 currentUser={this.props.user}
                 userList={this.props.users}
