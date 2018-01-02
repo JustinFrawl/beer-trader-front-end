@@ -38,6 +38,9 @@ return (
 
       </a>
     </Card.Content>
+    <Card.Content extra>
+    Hey there
+    </Card.Content>
   </Card>
 )
 }

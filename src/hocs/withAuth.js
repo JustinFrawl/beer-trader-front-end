@@ -48,6 +48,19 @@ const withAuth = WrappedComponent => {
     }
   }
 
+  // const mapStateToProps = state =>{
+  //   console.log("this is my state inside hoc",state.auth.messages);
+  //   return {
+  //     loggedIn: !!state.auth.currentUser.id,
+  //     user: state.auth.currentUser,
+  //     users: state.auth.users,
+  //     beers: state.auth.beers,
+  //     trades: state.auth.trades,
+  //     messages: state.auth.messages
+  //
+  //     // users: state.auth.
+  //   }
+  // };
   const mapStateToProps = state => ({
     loggedIn: !!state.auth.currentUser.id,
     user: state.auth.currentUser,

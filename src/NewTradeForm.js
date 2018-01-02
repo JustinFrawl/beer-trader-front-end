@@ -53,7 +53,8 @@ class NewTradeForm extends React.Component {
     const creator_beer = this.convertSenderBeerName(creator_beer_id)
     const receiver_beer = this.convertRecevierBeerName(receiver_beer_id)
     const { fields: { creator_id, receiver_id, creator_beer_id, receiver_beer_id, status } } = this.state;
-    this.props.createUserTrade(creator_id, receiver, creator_beer, receiver_beer, status);
+    this.props.createUserTrade(creator_id, receiver, creator_beer, receiver_beer, status, this.props.history);
+    this.props.history.push('/trades')
 
   };
 

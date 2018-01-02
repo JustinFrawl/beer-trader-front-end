@@ -11,7 +11,7 @@ const TradeDetail = (props) => {
 
   if(!props.trade) {
     return <div><h1>Welcome!
-                  Please Log In and Select an Auction in order to place a bid!</h1>
+                  View Your Trades!</h1>
 
 
     </div>;
@@ -24,7 +24,10 @@ const TradeDetail = (props) => {
   const traderName = receiver[0].user_name
   const userBeer = initiatorBeer[0].name
   const traderBeer = receiverBeer[0].name
-  const messageList = props.trade.messages.map(message => {
+  console.log(props)
+  const messageList = props.messages.filter(message => message.trade_id === props.trade.id)
+  console.log(messageList)
+  const messagesList = messageList.map(message => {
      const senderName = props.users.filter(user => user.id === message.user_id)
      console.log(senderName)
      return (
@@ -44,12 +47,13 @@ const TradeDetail = (props) => {
 
     <div>
     {userName} is trading {traderName}, {userBeer} for {traderBeer}
-    {messageList}
+    {messagesList}
     <NewMessageForm
       traderName={traderName}
       receiver_id={receiver[0].id}
       sender_id={initiator[0].id}
       trade={props.trade}
+      refreshMessages={props.refreshMessages}
     />
 
     </div>

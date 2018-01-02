@@ -29,7 +29,7 @@ class NewMessageForm extends React.Component {
     e.preventDefault();
     const { fields: { user_id, receiver_id, trade_id, content } } = this.state;
     this.props.createUserMessage(user_id, receiver_id, trade_id, content);
-    this.forceUpdate()
+    this.props.refreshMessages()
 
   };
 

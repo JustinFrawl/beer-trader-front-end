@@ -80,6 +80,7 @@ export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiv
   adapter.auth.createTrade({ creator_id, receiver_id, creator_beer_id, receiver_beer_id, status }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_NEW_TRADE', user });
+    // history.push('/trades');
     // history.push('/profile');
   });
   // adapter.auth.getAllUsers().then(users => {

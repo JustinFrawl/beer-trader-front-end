@@ -40,6 +40,9 @@ const authReducer = (state = initialState, action) => {
       return {...state, messages: messages};
     case 'SET_NEW_MESSAGE':
       const message = action.user;
+      const myMessages = [...state.messages, message]
+      console.log({...state, messages: myMessages})
+      return {...state, messages: myMessages};
 
     default:
       return state;

@@ -16,7 +16,8 @@ constructor(props){
 
   this.state = {
 
-    selectedTrade: null
+    selectedTrade: null,
+    trades: this.props.trades
 
   }
   // this.updateAuctions = this.updateAuctions.bind(this)
@@ -26,17 +27,41 @@ componentDidMount(){
 
 }
 
+messageUpdate = () => {
+  console.log('fetching trades')
+  this.props.fetchAllTrades()
+  this.setState({
+    trades: this.props.trades
+  })
+  console.log(this.state.selectedTrade.messages)
+}
+
+// updateTrades = () => {
+//     fetch('https://localhost:3000/api/v1/trades')
+//     .then(res => res.json())
+//     .then(res => {
+//       const stateSelected = this.state.selectedTrade;
+//       const updatedSelected = res.filter(selected => selected.id === stateSelected.id)
+//       // this.setState({
+//       //   selectedTrade: updatedSelected[0]
+//       // });
+//       console.log(updatedSelected)
+//     });
+// }
 
 
   render() {
     if(this.props.trades < 1){
       return <div> LOADING </div>
     }
+
+    console.log("this is my state inside hoc",this.props.messages);
+
     return (
             <div>
               <Grid columns={2} divided>
                 <Grid.Row stretched>
-                  <Grid.Column width={3}>
+                  <Grid.Column width={4}>
 
               <Segment>
               <Link to="/trades">Start a New Trade</Link>
@@ -45,15 +70,17 @@ componentDidMount(){
                 />
               </Segment>
             </Grid.Column>
-            <Grid.Column width={13}>
+            <Grid.Column width={12}>
               <TradeDetail
                 trade={this.state.selectedTrade}
                 user={this.props.user}
+                messages={this.props.messages}
                 users={this.props.users}
                 beers={this.props.beers}
                 grabTradeId={this.grabTradeId}
                 currentUser={this.props.user}
-                refreshBid={this.bidRefresh}
+                refreshMessages={this.messageUpdate}
+
                 />
             </Grid.Column>
           </Grid.Row>
