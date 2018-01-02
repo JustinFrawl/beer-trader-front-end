@@ -28,12 +28,10 @@ componentDidMount(){
 }
 
 messageUpdate = () => {
-  console.log('fetching trades')
   this.props.fetchAllTrades()
   this.setState({
     trades: this.props.trades
   })
-  console.log(this.state.selectedTrade.messages)
 }
 
 // updateTrades = () => {
@@ -55,7 +53,6 @@ messageUpdate = () => {
       return <div> LOADING </div>
     }
 
-    console.log("this is my state inside hoc",this.props.messages);
 
     return (
             <div>

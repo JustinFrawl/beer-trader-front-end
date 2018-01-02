@@ -4,7 +4,7 @@ import { Segment } from 'semantic-ui-react'
 
 const Message = (props) => {
   return(
-  <Segment attached>
+  <Segment attached inverted>
   {props.senderName[0].user_name}
   <li>
   {props.message.content}

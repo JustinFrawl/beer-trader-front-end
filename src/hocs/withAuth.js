@@ -16,10 +16,8 @@ const withAuth = WrappedComponent => {
         this.props.fetchAllBeers();
         this.props.fetchAllTrades();
         this.props.fetchAllMessages();
-        console.log(!!this.props.user.user_name, this.props)
         // this.props.fetchProfile(state.auth.currentUser.id)
         // this.props.fetchUsers();
-        console.log('in with auth', this.props)
       } else {
         this.setState({ authCompleted: true });
       }
@@ -27,9 +25,7 @@ const withAuth = WrappedComponent => {
 
     componentWillReceiveProps(nextProps) {
       if (nextProps.loggedIn) {
-        console.log("props after logging in here", !!this.props.user.user_name)
         this.setState({ authCompleted: true });
-        // console.log(this.props.fetchProfileDetails(this.props.user.id));
       }
     }
 

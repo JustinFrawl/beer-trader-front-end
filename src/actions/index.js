@@ -2,17 +2,14 @@ import { adapter } from '../services';
 
 export const fetchUser = () => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.getCurrentUser().then(user => {
     dispatch({ type: 'SET_CURRENT_USER', user });
-    console.log("user",user.id)
   });
   // adapter.auth.fetchProfile(this.props.user.id);
 };
 
 export const fetchAllUsers = () => dispatch => {
   dispatch({type: 'ASYNC_START'});
-  console.log("details happening");
   adapter.auth.getAllUsers()
   .then(user => {
 
@@ -22,7 +19,6 @@ export const fetchAllUsers = () => dispatch => {
 
 export const fetchAllBeers = () => dispatch => {
   dispatch({type: 'ASYNC_START'});
-  console.log("details happening");
   adapter.auth.getAllBeers()
   .then(user => {
 
@@ -32,7 +28,6 @@ export const fetchAllBeers = () => dispatch => {
 
 export const fetchAllTrades = () => dispatch => {
   dispatch({type: 'ASYNC_START'});
-  console.log("details happening");
   adapter.auth.getAllTrades()
   .then(user => {
 
@@ -42,7 +37,6 @@ export const fetchAllTrades = () => dispatch => {
 
 export const fetchAllMessages = () => dispatch => {
   dispatch({type: 'ASYNC_START'});
-  console.log("messages retrieved");
   adapter.auth.getAllMessages()
   .then(user => {
 
@@ -52,7 +46,6 @@ export const fetchAllMessages = () => dispatch => {
 
 export const loginUser = (user_name, password, history) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.login({ user_name, password }).then(user => {
     localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_CURRENT_USER', user });
@@ -65,7 +58,6 @@ export const loginUser = (user_name, password, history) => dispatch => {
 
 export const registerUser = (user_name, password, history) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.register({user : { user_name, password }}).then(user => {
     dispatch({ type: 'REGISTER_USER', user });
   });
@@ -76,7 +68,6 @@ export const registerUser = (user_name, password, history) => dispatch => {
 
 export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiver_beer_id, status) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.createTrade({ creator_id, receiver_id, creator_beer_id, receiver_beer_id, status }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_NEW_TRADE', user });
@@ -90,7 +81,6 @@ export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiv
 
 export const createUserBeer = ( name, description, abv, style ) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.createBeer({  name, description, abv, style  }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_NEW_BEER', user });
@@ -103,7 +93,6 @@ export const createUserBeer = ( name, description, abv, style ) => dispatch => {
 
 export const createUserMessage = ( user_id, receiver_id, trade_id, content ) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.createMessage({  user_id, receiver_id, trade_id, content  }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_NEW_MESSAGE', user });
@@ -116,7 +105,6 @@ export const createUserMessage = ( user_id, receiver_id, trade_id, content ) => 
 
 export const addUserBeer = ( user_id, beer_id ) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  console.log('it happened')
   adapter.auth.addBeer({  user_id, beer_id  }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'ADD_BEER_TO_USER', user });
@@ -133,7 +121,6 @@ export const addUserBeer = ( user_id, beer_id ) => dispatch => {
 //   adapter.auth.getAllUsers().then(users => {
 //     dispatch({ type: 'SET_CURRENT_USER', users})
 //   })
-//   console.log('this is in actions, getallusers', adapter.auth.getAllUsers());
 // }
 
 export const logoutUser = () => {

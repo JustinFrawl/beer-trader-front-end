@@ -29,12 +29,15 @@ class NewMessageForm extends React.Component {
     e.preventDefault();
     const { fields: { user_id, receiver_id, trade_id, content } } = this.state;
     this.props.createUserMessage(user_id, receiver_id, trade_id, content);
+    this.setState({content: ''})
     this.props.refreshMessages()
 
   };
 
   render() {
     const { fields } = this.state;
+    if(this.props.user.user_name === this.props.userName){
+
     return (
       <div>
         {this.state.error ? <h1>Try Again</h1> : null}
@@ -58,6 +61,33 @@ class NewMessageForm extends React.Component {
       </div>
     );
   }
+  if(this.props.user.user_name === this.props.traderName){
+
+  return (
+    <div>
+      {this.state.error ? <h1>Try Again</h1> : null}
+      <div className="ui form">
+        <form onSubmit={this.handleSubmit}>
+          <div className="ui field">
+            <label>Send a Message to {this.props.userName}</label>
+            <input
+              name="content"
+              placeholder="Write Your Message"
+              value={fields.content}
+              onChange={this.handleChange}
+            />
+          </div>
+
+          <button type="submit" className="ui basic green button">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+}
 }
 
 export default withAuth(NewMessageForm);
