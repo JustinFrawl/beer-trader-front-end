@@ -83,6 +83,13 @@ const createTrade = data => {
   }).then(res => res.json());
 };
 
+const destroyTrade = data => {
+  return fetch(`${API_ROOT}/trades/${data}`,
+  {
+    method: 'DELETE'
+  }).then(res => res.json());
+}
+
 const createBeer = data => {
   return fetch(`${API_ROOT}/beers/`, {
     method: 'POST',
@@ -120,6 +127,7 @@ export const adapter = {
     addBeer,
     register,
     getAllMessages,
-    createMessage
+    createMessage,
+    destroyTrade
   }
 };

@@ -34,6 +34,7 @@ messageUpdate = () => {
   // })
 }
 
+
 // updateTrades = () => {
 //     fetch('https://localhost:3000/api/v1/trades')
 //     .then(res => res.json())
@@ -76,7 +77,7 @@ messageUpdate = () => {
                 users={this.props.users}
                 beers={this.props.beers}
                 grabTradeId={this.grabTradeId}
-                currentUser={this.props.user}
+                deleteTrade={this.props.deleteUserTrade}
 
                 />
             </Grid.Column>

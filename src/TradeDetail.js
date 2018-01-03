@@ -49,7 +49,11 @@ const TradeDetail = (props) => {
   return(
 
     <div>
-    <Button basic color='red'>Reject Trade</Button>
+    <Button basic color='red'
+      onSubmit={props.deleteTrade(props.trade.id)}
+      >
+      Reject Trade
+    </Button>
     <Button basic color='green'>Accept Trade</Button>
     <h1>{userName} is trading {traderName}</h1>
     <Grid columns={2} divided>

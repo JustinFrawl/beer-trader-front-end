@@ -15,12 +15,7 @@ const User = (props) => {
   return (
     <Segment attached>
 
-        <Button
-          positive
-          floated='right'
-          >
-            View beers for trade!
-        </Button>
+
         <h3>{props.selectedUser.user_name}</h3>
         {thisBeerList}
     </Segment>

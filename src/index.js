@@ -44,6 +44,12 @@ const authReducer = (state = initialState, action) => {
       const message = action.user;
       const myMessages = [...state.messages, message]
       return {...state, messages: myMessages};
+    case 'DELETE_TRADE':
+      const deleteTrade = action.user;
+      const tradeRemoved = state.trades.filter(trade => {
+        return trade !== deleteTrade
+      })
+      return {...state, trades: tradeRemoved}
 
     default:
       return state;
