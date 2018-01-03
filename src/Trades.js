@@ -12,8 +12,8 @@ const Trades = (props) => {
       </h2>
     )
   }
-  const myTrades = props.trades.filter(trade => trade.creator_id === props.user.id || trade.receiver_id === props.user.id);
-  const renderTrade = myTrades.map(trade => {
+  const renderTrade = props.trades.map(trade => {
+    if( trade.creator_id === props.user.id || trade.receiver_id === props.user.id){
     const initiator = props.users.filter(user => user.id === trade.creator_id)
     const receiver = props.users.filter(user => user.id === trade.receiver_id)
     const initiatorBeer = props.beers.filter(beer => beer.id === trade.creator_beer_id)
@@ -22,6 +22,7 @@ const Trades = (props) => {
     return (
       <li>
     <Trade
+      key={trade.id}
       trade={trade}
       initiator={initiator}
       receiver={receiver}
@@ -31,7 +32,8 @@ const Trades = (props) => {
       />
       </li>
     )
-  });
+  };
+})
   return (
     <ul>
     <Button basic color='blue'
@@ -43,5 +45,6 @@ const Trades = (props) => {
     </ul>
   )
 }
+
 
 export default withAuth(Trades);

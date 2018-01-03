@@ -17,7 +17,6 @@ constructor(props){
   this.state = {
 
     selectedTrade: null,
-    trades: this.props.trades,
 
   }
   // this.updateAuctions = this.updateAuctions.bind(this)
@@ -33,7 +32,9 @@ messageUpdate = () => {
   //   trades: this.props.trades
   // })
 }
-
+handleDelete = (data) => {
+  this.setState({selectedTrade: null})
+}
 
 // updateTrades = () => {
 //     fetch('https://localhost:3000/api/v1/trades')
@@ -78,6 +79,7 @@ messageUpdate = () => {
                 beers={this.props.beers}
                 grabTradeId={this.grabTradeId}
                 deleteTrade={this.props.deleteUserTrade}
+                handleDelete={this.handleDelete}
 
                 />
             </Grid.Column>
