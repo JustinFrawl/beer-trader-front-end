@@ -11,6 +11,7 @@ import App from './App';
 
 const initialState = { currentUser: {}};
 const authReducer = (state = initialState, action) => {
+  // debugger
   switch (action.type) {
     case 'SET_CURRENT_USER':
       const { id, user_name } = action.user;
@@ -45,9 +46,12 @@ const authReducer = (state = initialState, action) => {
       const myMessages = [...state.messages, message]
       return {...state, messages: myMessages};
     case 'DELETE_TRADE':
+    // debugger
       const deleteTrade = action.user;
       const tradeRemoved = state.trades.filter(trade => {
-        return trade !== deleteTrade
+        if(!(trade.date_created === deleteTrade.date_created)){
+          return trade
+        }
       })
       return {...state, trades: tradeRemoved}
 

@@ -166,7 +166,7 @@ return(
       </Card>
       </Grid.Column>
       <Grid.Column width={8}>
-      <Card float='right'>
+      <Card floated='right'>
 
         <Card.Content>
           <Card.Header>

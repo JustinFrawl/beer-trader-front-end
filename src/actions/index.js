@@ -66,9 +66,9 @@ export const registerUser = (user_name, password, history) => dispatch => {
   // })
 };
 
-export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiver_beer_id, status) => dispatch => {
+export const createUserTrade = (creator_id, receiver_id, creator_beer_id, receiver_beer_id, status, date_created) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  adapter.auth.createTrade({ creator_id, receiver_id, creator_beer_id, receiver_beer_id, status }).then(user => {
+  adapter.auth.createTrade({ creator_id, receiver_id, creator_beer_id, receiver_beer_id, status, date_created }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_NEW_TRADE', user });
     // history.push('/trades');
@@ -83,7 +83,8 @@ export const deleteUserTrade = (trade_id) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
   adapter.auth.destroyTrade(trade_id).then(user => {
     // localStorage.setItem('token', user.jwt);
-    dispatch({ type: 'DELETE_TRADE', user });
+    // debugger
+    dispatch({ type: 'DELETE_TRADE', user});
     // history.push('/trades');
     // history.push('/profile');
     console.log('working')

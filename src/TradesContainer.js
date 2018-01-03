@@ -55,7 +55,6 @@ handleDelete = (data) => {
       return <div> LOADING </div>
     }
 
-
     return (
             <div>
               <Grid columns={2} divided>

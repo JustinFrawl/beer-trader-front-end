@@ -37,7 +37,7 @@ return(
 
 <div>
   <h1>
-    All Beers Currently Available for Trade
+    List of Users
   </h1>
   <ul>
   {userList}
