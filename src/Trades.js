@@ -1,5 +1,4 @@
 import React from 'react';
-import withAuth from './hocs/withAuth';
 import Trade from './Trade.js';
 import { Button } from 'semantic-ui-react'
 
@@ -47,4 +46,4 @@ const Trades = (props) => {
 }
 
 
-export default withAuth(Trades);
+export default Trades;

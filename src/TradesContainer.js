@@ -66,6 +66,10 @@ handleDelete = (data) => {
               <Trades
                 onTradeSelect={selectedTrade => this.setState({selectedTrade})}
                 onButtonCLick={selectedTrade => this.setState({selectedTrade: null})}
+                trades={this.props.trades}
+                users={this.props.users}
+                beers={this.props.beers}
+                user={this.props.user}
                 />
               </Segment>
             </Grid.Column>
