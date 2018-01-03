@@ -18,9 +18,7 @@ class NewTradeForm extends React.Component {
         receiver_beer_id: '',
         status: false
       },
-      messageFields: {
 
-      }
     };
   }
 
@@ -31,19 +29,19 @@ class NewTradeForm extends React.Component {
 
   convertUserName = e => {
     const receiver_name = this.state.fields.receiver_id
-    const user = this.props.users.filter(user => user.user_name === receiver_name)
+    const user = this.props.users.filter(user => user.user_name.toLowerCase() === receiver_name.toLowerCase())
       return user[0].id
 
   }
   convertSenderBeerName = e => {
     const beer_name = this.state.fields.creator_beer_id
-    const beer = this.props.beers.filter(beer => beer.name === beer_name)
+    const beer = this.props.beers.filter(beer => beer.name.toLowerCase() === beer_name.toLowerCase())
     return beer[0].id
   }
 
   convertRecevierBeerName = e => {
     const beer_name = this.state.fields.receiver_beer_id
-    const beer = this.props.beers.filter(beer => beer.name === beer_name)
+    const beer = this.props.beers.filter(beer => beer.name.toLowerCase() === beer_name.toLowerCase())
     return beer[0].id
   }
 
@@ -54,7 +52,6 @@ class NewTradeForm extends React.Component {
     const receiver_beer = this.convertRecevierBeerName(receiver_beer_id)
     const { fields: { creator_id, receiver_id, creator_beer_id, receiver_beer_id, status } } = this.state;
     this.props.createUserTrade(creator_id, receiver, creator_beer, receiver_beer, status, this.props.history);
-    this.props.history.push('/trades')
 
   };
 
@@ -69,7 +66,7 @@ class NewTradeForm extends React.Component {
               <label>Who Would You Like to Trade With?</label>
               <input
                 name="receiver_id"
-                placeholder="receiver_id"
+                placeholder="Who Are You Trading?"
                 value={fields.receiver_id}
                 onChange={this.handleChange}
               />
@@ -78,7 +75,7 @@ class NewTradeForm extends React.Component {
               <label>What Beer do You Want To Trade?</label>
               <input
                 name="creator_beer_id"
-                placeholder="creator_beer_id"
+                placeholder="Beer You're Trading"
                 value={fields.creator_beer_id}
                 onChange={this.handleChange}
               />
@@ -87,13 +84,13 @@ class NewTradeForm extends React.Component {
               <label>What Beer do You Want To Trade For?</label>
               <input
                 name="receiver_beer_id"
-                placeholder="receiver_beer_id"
+                placeholder="Beer You Want"
                 value={fields.receiver_beer_id}
                 onChange={this.handleChange}
               />
             </div>
             <button type="submit" className="ui basic green button">
-              Login
+              Create Trade!
             </button>
           </form>
         </div>

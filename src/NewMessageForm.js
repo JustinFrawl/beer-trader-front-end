@@ -30,7 +30,6 @@ class NewMessageForm extends React.Component {
     const { fields: { user_id, receiver_id, trade_id, content } } = this.state;
     this.props.createUserMessage(user_id, receiver_id, trade_id, content);
     this.setState({content: ''})
-    this.props.refreshMessages()
 
   };
 

@@ -29,6 +29,8 @@ const authReducer = (state = initialState, action) => {
       return { ...state, trades: trades};
     case 'SET_NEW_TRADE':
       const trade = action.user;
+      const myTrades = [...state.trades, trade]
+      return {...state, trades: myTrades}
     case 'SET_NEW_BEER':
       const beer = action.user;
     case 'ADD_BEER_TO_USER':
@@ -41,7 +43,6 @@ const authReducer = (state = initialState, action) => {
     case 'SET_NEW_MESSAGE':
       const message = action.user;
       const myMessages = [...state.messages, message]
-      console.log({...state, messages: myMessages})
       return {...state, messages: myMessages};
 
     default:

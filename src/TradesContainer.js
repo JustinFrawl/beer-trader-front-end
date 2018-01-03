@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import withAuth from './hocs/withAuth.js';
-import { Grid, Segment } from 'semantic-ui-react';
+import { Grid, Segment, Button } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import Trade from './Trade.js';
 import TradeDetail from './TradeDetail.js';
@@ -17,7 +17,7 @@ constructor(props){
   this.state = {
 
     selectedTrade: null,
-    trades: this.props.trades
+    trades: this.props.trades,
 
   }
   // this.updateAuctions = this.updateAuctions.bind(this)
@@ -28,10 +28,10 @@ componentDidMount(){
 }
 
 messageUpdate = () => {
-  this.props.fetchAllTrades()
-  this.setState({
-    trades: this.props.trades
-  })
+  // this.props.fetchAllTrades()
+  // this.setState({
+  //   trades: this.props.trades
+  // })
 }
 
 // updateTrades = () => {
@@ -49,7 +49,7 @@ messageUpdate = () => {
 
 
   render() {
-    if(this.props.trades < 1){
+    if(!this.props.trades){
       return <div> LOADING </div>
     }
 
@@ -61,9 +61,10 @@ messageUpdate = () => {
                   <Grid.Column width={4}>
 
               <Segment>
-              <Link to="/trades">Start a New Trade</Link>
+
               <Trades
                 onTradeSelect={selectedTrade => this.setState({selectedTrade})}
+                onButtonCLick={selectedTrade => this.setState({selectedTrade: null})}
                 />
               </Segment>
             </Grid.Column>
@@ -76,7 +77,6 @@ messageUpdate = () => {
                 beers={this.props.beers}
                 grabTradeId={this.grabTradeId}
                 currentUser={this.props.user}
-                refreshMessages={this.messageUpdate}
 
                 />
             </Grid.Column>

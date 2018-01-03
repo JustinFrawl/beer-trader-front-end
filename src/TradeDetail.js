@@ -1,6 +1,7 @@
 import React from 'react';
 import Message from './Message.js';
 import NewMessageForm from './NewMessageForm.js';
+import NewTradeForm from './NewTradeForm.js';
 
 import { Grid, Segment, Image, Header, Card, Button } from 'semantic-ui-react'
 
@@ -10,11 +11,15 @@ const TradeDetail = (props) => {
 
 
   if(!props.trade) {
-    return <div><h1>Welcome!
-                  View Your Trades!</h1>
+    return(
+    <div>
+    <h1>Welcome!
+                  View Your Trades or Start a New One!!</h1>
+                  <NewTradeForm/>
 
 
-    </div>;
+    </div>
+  )
   }
   const initiator = props.users.filter(user => user.id === props.trade.creator_id)
   const receiver = props.users.filter(user => user.id === props.trade.receiver_id)
@@ -40,10 +45,12 @@ const TradeDetail = (props) => {
    }
 )
   console.log(props.trade.status)
- if(props.trade.status === true){
+ if(props.trade.status === false && props.user.id === props.trade.receiver_id){
   return(
 
     <div>
+    <Button basic color='red'>Reject Trade</Button>
+    <Button basic color='green'>Accept Trade</Button>
     <h1>{userName} is trading {traderName}</h1>
     <Grid columns={2} divided>
       <Grid.Row stretched>
@@ -121,8 +128,6 @@ const TradeDetail = (props) => {
 return(
 
   <div>
-  <Button basic color='red'>Reject Trade</Button>
-  <Button basic color='green'>Accept Trade</Button>
   <h1>{userName} is trading {traderName}</h1>
   <Grid columns={2} divided>
     <Grid.Row stretched>
@@ -155,7 +160,7 @@ return(
       </Card>
       </Grid.Column>
       <Grid.Column width={8}>
-      <Card>
+      <Card float='right'>
 
         <Card.Content>
           <Card.Header>
