@@ -39,7 +39,6 @@ class App extends Component {
             ) : (
               <div>
               <Link to="/login">/ Go to Login</Link>
-              <Link to="/register">/ New? Create an Account Here</Link>
               </div>
             )}
 

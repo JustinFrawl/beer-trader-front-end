@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as actions from './actions';
 import Card from './Card.js';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
@@ -35,7 +36,7 @@ class Login extends React.Component {
       <style>{`
       body > div,
       body > div > div,
-      body > div > div > div.login-form {
+      body > div > div.login-form {
         height: 100%;
       }
     `}</style>
@@ -75,11 +76,11 @@ class Login extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
-            <Button color='teal' fluid size='large'>Login</Button>
+            <Button color='yellow' fluid size='large'>Login</Button>
             </Segment>
           </Form>
           <Message>
-            New to us? <a href='#'>Sign Up</a>
+            New to us? <Link to="/register">Create an Account Here</Link>
           </Message>
         </Grid.Column>
       </Grid>

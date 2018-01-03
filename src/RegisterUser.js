@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from './actions';
 import Card from './Card.js';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
 
 class RegisterUser extends React.Component {
   constructor() {
@@ -31,22 +33,43 @@ class RegisterUser extends React.Component {
   render() {
     const { fields } = this.state;
     return (
-      <div>
+      <div className='register-form'>
+      <style>{`
+        body > div,
+        body > div > div,
+        body > div > div.register-form {
+          height: 100%;
+        }
+        `}</style>
+        <Grid
+        textAlign='center'
+        style={{ height: '100%' }}
+        verticalAlign='middle'
+        >
+        <Grid.Column style={{ maxWidth: 450 }}>
+        <Header as='h2' color='teal' textAlign='center'>
+        </Header>
         {this.state.error ? <h1>Try Again</h1> : null}
-        <div className="ui form">
-          <form onSubmit={this.handleSubmit}>
+          <Form size='large'
+            onSubmit={this.handleSubmit}>
+            <Segment stacked>
             <div className="ui field">
               <label>user_name</label>
-              <input
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
                 name="user_name"
                 placeholder="user_name"
                 value={fields.user_name}
                 onChange={this.handleChange}
               />
-            </div>
-            <div className="ui field">
+
               <label>Password</label>
-              <input
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
                 name="password"
                 type="password"
                 placeholder="password"
@@ -54,11 +77,11 @@ class RegisterUser extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
-            <button type="submit" className="ui basic green button">
-              Register
-            </button>
-          </form>
-        </div>
+            <Button color='yellow' fluid size='large'>Register</Button>
+            </Segment>
+          </Form>
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }
