@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from './actions';
 import Card from './Card.js';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
 class Login extends React.Component {
   constructor() {
@@ -30,22 +31,43 @@ class Login extends React.Component {
   render() {
     const { fields } = this.state;
     return (
-      <div>
+      <div className='login-form'>
+      <style>{`
+      body > div,
+      body > div > div,
+      body > div > div > div.login-form {
+        height: 100%;
+      }
+    `}</style>
+    <Grid
+     textAlign='center'
+     style={{ height: '100%' }}
+     verticalAlign='middle'
+   >
+   <Grid.Column style={{ maxWidth: 450 }}>
+        <Header as='h2' color='teal' textAlign='center'>
+         </Header>
         {this.state.error ? <h1>Try Again</h1> : null}
-        <div className="ui form">
-          <form onSubmit={this.handleSubmit}>
+          <Form size='large'
+          onSubmit={this.handleSubmit}>
+          <Segment stacked>
             <div className="ui field">
               <label>user_name</label>
-              <input
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
                 name="user_name"
                 placeholder="user_name"
                 value={fields.user_name}
                 onChange={this.handleChange}
               />
-            </div>
-            <div className="ui field">
+
               <label>Password</label>
-              <input
+              <Form.Input
+                fluid
+                icon='lock'
+                iconPosition='left'
                 name="password"
                 type="password"
                 placeholder="password"
@@ -53,12 +75,15 @@ class Login extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
-            <button type="submit" className="ui basic green button">
-              Login
-            </button>
-          </form>
-        </div>
-      </div>
+            <Button color='teal' fluid size='large'>Login</Button>
+            </Segment>
+          </Form>
+          <Message>
+            New to us? <a href='#'>Sign Up</a>
+          </Message>
+        </Grid.Column>
+      </Grid>
+    </div>
     );
   }
 }
