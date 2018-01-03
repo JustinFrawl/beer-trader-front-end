@@ -94,6 +94,21 @@ export const deleteUserTrade = (trade_id) => dispatch => {
   // })
 };
 
+export const acceptUserTrade = (trade_id) => dispatch => {
+  dispatch({ type: 'ASYNC_START' });
+  adapter.auth.acceptTrade(trade_id).then(user => {
+    // localStorage.setItem('token', user.jwt);
+    // debugger
+    dispatch({ type: 'ACCEPT_TRADE', user});
+    // history.push('/trades');
+    // history.push('/profile');
+    console.log('working')
+  });
+  // adapter.auth.getAllUsers().then(users => {
+  //   dispatch({users})
+  // })
+};
+
 export const createUserBeer = ( name, description, abv, style ) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
   adapter.auth.createBeer({  name, description, abv, style  }).then(user => {

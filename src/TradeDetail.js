@@ -3,6 +3,7 @@ import Message from './Message.js';
 import NewMessageForm from './NewMessageForm.js';
 import NewTradeForm from './NewTradeForm.js';
 import DeleteTradeButton from './DeleteTradeButton.js';
+import AcceptTradeButton from './AcceptTradeButton.js';
 
 import { Grid, Segment, Image, Header, Card, Button } from 'semantic-ui-react'
 
@@ -56,7 +57,10 @@ const TradeDetail = (props) => {
       handleDelete={props.handleDelete}
 
       />
-    <Button basic color='green'>Accept Trade</Button>
+    <AcceptTradeButton
+      trade={props.trade}
+      acceptTrade={props.acceptTrade}
+    />
     <h1>{userName} is trading {traderName}</h1>
     <Grid columns={2} divided>
       <Grid.Row stretched>

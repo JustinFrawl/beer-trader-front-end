@@ -54,6 +54,10 @@ const authReducer = (state = initialState, action) => {
         }
       })
       return {...state, trades: tradeRemoved}
+    case 'ACCEPT_TRADE':
+      const acceptedTrade = action.user;
+      const fullTrades = [...state.trades, acceptedTrade];
+      return {...state, trades: fullTrades};
 
     default:
       return state;

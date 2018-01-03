@@ -83,6 +83,14 @@ const createTrade = data => {
   }).then(res => res.json());
 };
 
+const acceptTrade = data => {
+  return fetch(`${API_ROOT}/trades/${data}`, {
+    method: 'PATCH',
+    headers,
+    body: JSON.stringify({'status':'true'})
+  }).then(res => res.json());
+};
+
 const destroyTrade = data => {
   return fetch(`${API_ROOT}/trades/${data}`,
   {
@@ -128,6 +136,7 @@ export const adapter = {
     register,
     getAllMessages,
     createMessage,
-    destroyTrade
+    destroyTrade,
+    acceptTrade
   }
 };

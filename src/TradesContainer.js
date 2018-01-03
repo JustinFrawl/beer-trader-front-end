@@ -83,6 +83,7 @@ handleDelete = (data) => {
                 grabTradeId={this.grabTradeId}
                 deleteTrade={this.props.deleteUserTrade}
                 handleDelete={this.handleDelete}
+                acceptTrade={this.props.acceptUserTrade}
 
                 />
             </Grid.Column>
