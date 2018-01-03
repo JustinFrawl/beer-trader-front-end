@@ -14,6 +14,7 @@ import NewBeerForm from './NewBeerForm.js';
 import RegisterUser from './RegisterUser.js';
 import Messages from './Messages.js';
 import TradesContainer from './TradesContainer.js';
+import UsersContainer from './UsersContainer.js';
 
 
 class App extends Component {
@@ -62,7 +63,7 @@ class App extends Component {
           <Route path="/register" component={RegisterUser} />
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
-          <Route path="/users" component={Users} />
+          <Route path="/users" component={UsersContainer} />
           <Route path="/trades" component={NewTradeForm} />
           <Route path="/search" component={SearchBeers} />
           <Route path="/mybeer" component={UserBeers} />

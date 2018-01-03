@@ -16,20 +16,19 @@ const userList = props.users.map((user) => {
   return (
     <div>You
     <User
-        // onAuctionSelect={props.onAuctionSelect}
+        onUserSelect={props.onUserSelect}
         key={user.id}
-        selectedUser={user}
-        user={props.user}
+        user={user}
       />
     </div>
   )
 }
   return (
     <User
-        // onAuctionSelect={props.onAuctionSelect}
+        onUserSelect={props.onUserSelect}
         key={user.id}
         selectedUser={user}
-        user={props.user}
+        user={user}
         beers={props.user.beers}
       />
   )
