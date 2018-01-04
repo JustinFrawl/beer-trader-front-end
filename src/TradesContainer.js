@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import withAuth from './hocs/withAuth.js';
-import { Grid, Segment, Button } from 'semantic-ui-react';
+import { Grid, Segment, Button, Container } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import Trade from './Trade.js';
 import TradeDetail from './TradeDetail.js';
@@ -52,11 +52,14 @@ handleDelete = (data) => {
 
   render() {
     if(!this.props.trades){
+      <Container>
       return <div> LOADING </div>
+      </Container>
     }
 
     return (
             <div>
+            <Container>
               <Grid columns={2} divided>
                 <Grid.Row stretched>
                   <Grid.Column width={4}>
@@ -89,6 +92,7 @@ handleDelete = (data) => {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        </Container>
           </div>
 
 

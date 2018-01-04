@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import withAuth from './hocs/withAuth.js';
-import { Grid, Segment, Button } from 'semantic-ui-react';
+import { Grid, Segment, Button, Container } from 'semantic-ui-react';
 import Users from './Users.js';
 import User from './User.js';
 import UserDetail from './UserDetail.js';
@@ -29,12 +29,13 @@ componentDidMount(){
 
   render() {
     if(!this.props.trades){
-      return <div> LOADING </div>
+      return <div><Container> LOADING </Container></div>
     }
 
 
     return (
             <div>
+            <Container>
               <Grid columns={2} divided>
                 <Grid.Row stretched>
                   <Grid.Column width={4}>
@@ -59,6 +60,7 @@ componentDidMount(){
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        </Container>
           </div>
 
 

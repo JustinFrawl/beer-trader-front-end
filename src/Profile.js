@@ -4,6 +4,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import UserBeers from './UserBeers';
 import NewTradeForm from './NewTradeForm';
 import SearchBeers from './SearchBeers';
+import {Container} from 'semantic-ui-react';
 
 class Profile extends Component {
 
@@ -15,6 +16,7 @@ componentDidMount = (props) => {
 render() {
   return (
     <div>
+    <Container>
       <h1>Welcome {this.props.user.user_name}!</h1>
       <h2>What would you like to do?</h2>
       <ul>
@@ -28,7 +30,7 @@ render() {
 
       </ul>
 
-
+      </Container>
     </div>
   );
 };

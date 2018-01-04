@@ -8,7 +8,7 @@ import * as actions from './actions';
 import UserBeers from './UserBeers';
 import NewTradeForm from './NewTradeForm.js';
 import SearchBeers from './SearchBeers';
-import { Header } from 'semantic-ui-react';
+import { Header, Menu, Container, Button } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import NewBeerForm from './NewBeerForm.js';
 import RegisterUser from './RegisterUser.js';
@@ -22,43 +22,40 @@ class App extends Component {
     return (
       <div className="App">
 
+      <Container>
+      <Header
+              as='h1'
+              content='Beer Trader, Pokemon Cards for Grown Men'
+              style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: '2em', marginTop: '2em' }}
+            />
+      </Container>
+      <Container>
+              <Menu pointing secondary size='massive' color='yellow'>
+                <Menu.Item as='a'><Link to="/profile">My Profile</Link></Menu.Item>
+                <Menu.Item as='a'><Link to='/mybeer'>Look at Your Beers!</Link></Menu.Item>
+                <Menu.Item as='a'><Link to="/users">Browser Users</Link></Menu.Item>
+                <Menu.Item as='a'><Link to="/mytrades">Manage Your Trades</Link></Menu.Item>
+                <Menu.Item position='right'>
+                {this.props.loggedIn ? (
+                  <a
+                    inverted style={{ marginLeft: '0.5em' }}
+                    onClick={e => {
+                      e.preventDefault();
+                      this.props.logoutUser();
+                    }}
+                  >
 
-        <h2 textAlign='center'>Beer Trader, Pokemon Cards for the Grown Man</h2>
-        <Header as='h2' icon textAlign='center'>
-        <ul>
+                    Sign Out
+                  </a>
+                ) : (
+                  <div>
+                  <Link to="/login">Login</Link>
+                  </div>
+                )}
+                </Menu.Item>
+              </Menu>
+            </Container>
 
-            {this.props.loggedIn ? (
-              <a
-                onClick={e => {
-                  e.preventDefault();
-                  this.props.logoutUser();
-                }}
-              >
-
-                Sign Out
-              </a>
-            ) : (
-              <div>
-              <Link to="/login">/ Go to Login</Link>
-              </div>
-            )}
-
-
-            <Link to="/profile">/ Go to Profile</Link>
-
-
-            <Link to="/users">/ Go to Users</Link>
-
-
-
-
-            <Link to='/mybeer'>/ Look at My Beers!</Link>
-
-            <Link to='/inbox'>/ Inbox</Link>
-
-
-        </ul>
-        </Header>
         <Switch>
           <Route path="/register" component={RegisterUser} />
           <Route path="/login" component={Login} />
