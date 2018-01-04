@@ -14,7 +14,7 @@ if(!props.beers){
     </h2>
   )
 }
-const beerListItems = props.beers.map((beer) => {
+const beerListItems = props.searchBeers.map((beer) => {
   return (
 
     <Card>

@@ -28,6 +28,9 @@ componentDidMount(){
 }
 filterResults = () => {
   // console.log(this.state)
+  if(!this.props.beers){
+    return this.props.beers
+  }
    let newList = this.props.beers.filter(beer => {
      if(beer.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())){
        return beer
@@ -83,6 +86,7 @@ messageUpdate = () => {
                 onButtonCLick={selectedBeer => this.setState({selectedBeer: null})}
                 users={this.props.users}
                 beers={this.props.beers}
+                searchBeers={this.filterResults()}
                 user={this.props.user}
                 />
               </Segment>
