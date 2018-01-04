@@ -68,18 +68,25 @@ const TradeDetail = (props) => {
         <Card>
 
           <Card.Content>
-            <Card.Header>
+            <Card.Header
+            textAlign='center'>
               <h3>{userBeer}</h3>
             </Card.Header>
             <Card.Meta>
-              <span className='date'>
+              <span className='date'
+              textAlign='center'>
                 {initiatorBeer[0].style}
                 <br/>
                 {initiatorBeer[0].abv}%
               </span>
             </Card.Meta>
-            <Card.Description>
+            <Card.Description
+            textAlign='center'>
               {initiatorBeer[0].description}
+            </Card.Description>
+            <Card.Description
+            textAlign='center'>
+              {initiator.address}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
@@ -155,18 +162,25 @@ return(
       <Card>
 
         <Card.Content>
-          <Card.Header>
+          <Card.Header
+          textAlign='center'>
             <h3>{userBeer}</h3>
           </Card.Header>
           <Card.Meta>
-            <span className='date'>
+            <span className='date'
+            textAlign='center'>
               {initiatorBeer[0].style}
               <br/>
               {initiatorBeer[0].abv}%
             </span>
           </Card.Meta>
-          <Card.Description>
+          <Card.Description
+          textAlign='center'>
             {initiatorBeer[0].description}
+          </Card.Description>
+          <Card.Description
+          textAlign='center'>
+            {initiator.address}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
