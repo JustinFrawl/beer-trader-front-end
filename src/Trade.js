@@ -13,6 +13,7 @@ const Trade = (props) => {
   const traderName = props.receiver[0].user_name
   const userBeer = props.initiatorBeer[0].name
   const traderBeer = props.receiverBeer[0].name
+
 return (
   <Card>
 
@@ -39,7 +40,6 @@ return (
       </a>
     </Card.Content>
     <Card.Content extra>
-    Hey there
     </Card.Content>
   </Card>
 )

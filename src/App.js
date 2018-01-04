@@ -7,7 +7,6 @@ import Users from './Users';
 import * as actions from './actions';
 import UserBeers from './UserBeers';
 import NewTradeForm from './NewTradeForm.js';
-import SearchBeers from './SearchBeers';
 import { Header, Menu, Container, Button, Segment } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import NewBeerForm from './NewBeerForm.js';
@@ -15,6 +14,8 @@ import RegisterUser from './RegisterUser.js';
 import Messages from './Messages.js';
 import TradesContainer from './TradesContainer.js';
 import UsersContainer from './UsersContainer.js';
+import BeersContainer from './BeersContainer.js';
+
 
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
                 <Menu.Item as='a'><Link to='/mybeer'>Look at Your Beers!</Link></Menu.Item>
                 <Menu.Item as='a'><Link to="/users">Browser Users</Link></Menu.Item>
                 <Menu.Item as='a'><Link to="/mytrades">Manage Your Trades</Link></Menu.Item>
+                <Menu.Item as='a'><Link to="/search">Search Beers</Link></Menu.Item>
                 <Menu.Item position='right'>
                 {this.props.loggedIn ? (
                   <a
@@ -69,10 +71,9 @@ class App extends Component {
           <Route path="/profile" component={Profile} />
           <Route path="/users" component={UsersContainer} />
           <Route path="/trades" component={NewTradeForm} />
-          <Route path="/search" component={SearchBeers} />
+          <Route path="/search" component={BeersContainer} />
           <Route path="/mybeer" component={UserBeers} />
           <Route path="/mytrades" component={TradesContainer} />
-          <Route path="/newbeer" component={NewBeerForm} />
           <Route path="/inbox" component={Messages} />
         </Switch>
       </div>

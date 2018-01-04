@@ -109,9 +109,9 @@ export const acceptUserTrade = (trade_id) => dispatch => {
   // })
 };
 
-export const createUserBeer = ( name, description, abv, style ) => dispatch => {
+export const createUserBeer = ( name, description, abv, style, brewery ) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  adapter.auth.createBeer({  name, description, abv, style  }).then(user => {
+  adapter.auth.createBeer({  name, description, abv, style, brewery  }).then(user => {
     // localStorage.setItem('token', user.jwt);
     dispatch({ type: 'SET_NEW_BEER', user });
     // history.push('/profile');

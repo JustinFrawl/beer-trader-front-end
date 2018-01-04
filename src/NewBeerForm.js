@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import * as actions from './actions';
 import Card from './Card.js';
 import withAuth from './hocs/withAuth';
+import {Segment} from 'semantic-ui-react';
 
 class NewTradeForm extends React.Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class NewTradeForm extends React.Component {
         name: '',
         description: '',
         abv: '',
-        style: ''
+        style: '',
+        brewery: ''
       }
     };
   }
@@ -26,33 +28,13 @@ class NewTradeForm extends React.Component {
     this.setState({ fields: newFields });
   };
 
-  // convertUserName = e => {
-  //   const receiver_name = this.state.fields.receiver_id
-  //   const user = this.props.users.filter(user => user.user_name === receiver_name)
-  //     return user[0].id
-  //
-  // }
-  // convertSenderBeerName = e => {
-  //   const beer_name = this.state.fields.creator_beer_id
-  //   const beer = this.props.beers.filter(beer => beer.name === beer_name)
-  //   debugger
-  //   return beer[0].id
-  // }
-  //
-  // convertRecevierBeerName = e => {
-  //   const beer_name = this.state.fields.receiver_beer_id
-  //   const beer = this.props.beers.filter(beer => beer.name === beer_name)
-  //   debugger
-  //   return beer[0].id
-  // }
-
   handleSubmit = e => {
     e.preventDefault();
     // const receiver = this.convertUserName(receiver_id)
     // const creator_beer = this.convertSenderBeerName(creator_beer_id)
     // const receiver_beer = this.convertRecevierBeerName(receiver_beer_id)
-    const { fields: { name, description, abv, style } } = this.state;
-    this.props.createUserBeer(name, description, abv, style);
+    const { fields: { name, description, abv, style, brewery } } = this.state;
+    this.props.createUserBeer(name, description, abv, style, brewery);
 
   };
 
@@ -60,6 +42,7 @@ class NewTradeForm extends React.Component {
     const { fields } = this.state;
     return (
       <div>
+      <Segment>
         {this.state.error ? <h1>Try Again</h1> : null}
         <div className="ui form">
           <form onSubmit={this.handleSubmit}>
@@ -99,11 +82,21 @@ class NewTradeForm extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
+            <div className="ui field">
+              <label>What Style is it?</label>
+              <input
+                name="brewery"
+                placeholder="brewery"
+                value={fields.brewery}
+                onChange={this.handleChange}
+              />
+            </div>
             <button type="submit" className="ui basic green button">
               List This Beer
             </button>
           </form>
         </div>
+        </Segment>
       </div>
     );
   }
