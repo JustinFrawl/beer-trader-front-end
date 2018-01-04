@@ -17,7 +17,7 @@ componentDidMount = (props) => {
 
 render() {
   console.log(this.props)
-  if(!this.props.users){
+  if(!this.props.users || !this.props.user){
     return (
       <h1>
       Loading.....

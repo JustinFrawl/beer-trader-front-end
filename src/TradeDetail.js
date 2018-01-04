@@ -15,8 +15,11 @@ const TradeDetail = (props) => {
   if(!props.trade) {
     return(
     <div>
-    <h1>Welcome!
-                  View Your Trades or Start a New One!!</h1>
+    <Header
+            as='h1'
+            content='View Trade Details or Start a New One'
+            style={{color: 'white'}}
+            />
                   <NewTradeForm/>
 
 

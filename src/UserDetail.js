@@ -14,33 +14,53 @@ const UserDetail = (props) => {
     </div>
   )
   }
+  const renderBeer = props.user.beers.map(beer => {
+    return (
+
+      <Card.Description
+      textAlign='center'>
+      {beer.name}:
+      <br/>
+      {beer.description}
+      </Card.Description>
+
+    )
+  });
 return(
-<div>
-<Segment>
+  <div>
 
   <div>
-<h1>  {props.user.user_name} </h1>
   </div>
 
-  <Grid>
-    <Grid.Row>
-      <Grid.Column width={8}>
-      <Icon name='user' size='large'/>
-        {props.user.user_name}
-      </Grid.Column>
-      <Grid.Column width={8}>
-      </Grid.Column>
-    </Grid.Row>
+    <Card>
 
-    <Grid.Row>
-      <Grid.Column width={8}>
-      </Grid.Column>
-      <Grid.Column width={8}>
-      </Grid.Column>
-    </Grid.Row>
-  </Grid>
-  </Segment>
-  </div>
+      <Card.Content>
+        <Card.Header
+        textAlign='center'>
+          {props.user.user_name}
+        </Card.Header>
+        <Card.Meta>
+          <span className='date'>
+          </span>
+        </Card.Meta>
+        <Card.Description
+        textAlign='center'>
+          <h3>Description:</h3>
+          {props.user.description}
+        </Card.Description>
+        <Card.Description
+        textAlign='center'>
+          <h3>Beers:</h3>
+          {renderBeer}
+        </Card.Description>
+        <Card.Description
+        textAlign='center'>
+          <h3>Number of Trades:</h3>
+          {props.user.trades.length}
+        </Card.Description>
+      </Card.Content>
+    </Card>
+    </div>
 )
 }
 
