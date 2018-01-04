@@ -51,6 +51,7 @@ const TradeDetail = (props) => {
   return(
 
     <div>
+    <Segment>
     <DeleteTradeButton
       trade={props.trade}
       deleteTrade={props.deleteTrade}
@@ -61,7 +62,7 @@ const TradeDetail = (props) => {
       trade={props.trade}
       acceptTrade={props.acceptTrade}
     />
-    <h1>{userName} is trading {traderName}</h1>
+    <h1 textAlign='center'>Trade Details</h1>
     <Grid columns={2} divided>
       <Grid.Row stretched>
         <Grid.Column width={8}>
@@ -70,6 +71,7 @@ const TradeDetail = (props) => {
           <Card.Content>
             <Card.Header
             textAlign='center'>
+              <h2>{initiator[0].user_name}</h2>
               <h3>{userBeer}</h3>
             </Card.Header>
             <Card.Meta>
@@ -86,7 +88,8 @@ const TradeDetail = (props) => {
             </Card.Description>
             <Card.Description
             textAlign='center'>
-              {initiator.address}
+            <h3>Shipping Address</h3>
+              {initiator[0].address}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
@@ -104,6 +107,7 @@ const TradeDetail = (props) => {
 
           <Card.Content>
             <Card.Header>
+              <h2>{receiver[0].user_name}</h2>
               <h3>{traderBeer}</h3>
             </Card.Header>
             <Card.Meta>
@@ -115,6 +119,11 @@ const TradeDetail = (props) => {
             </Card.Meta>
             <Card.Description>
               {receiverBeer[0].description}
+            </Card.Description>
+            <Card.Description
+            textAlign='center'>
+            <h3>Shipping Address</h3>
+              {receiver[0].address}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
@@ -144,17 +153,18 @@ const TradeDetail = (props) => {
       trade={props.trade}
       refreshMessages={props.refreshMessages}
     />
-
+    </Segment>
     </div>
   )
 }
 return(
 
   <div>
+  <Segment>
   <Segment
     textAlign='center'
     >
-  <h1 textAlign='center'>{userName} is trading {traderName}</h1>
+  <h1 textAlign='center'>Trade Details</h1>
 
   <Grid columns={2} divided>
     <Grid.Row stretched>
@@ -164,6 +174,7 @@ return(
         <Card.Content>
           <Card.Header
           textAlign='center'>
+          <h2>{initiator[0].user_name}</h2>
             <h3>{userBeer}</h3>
           </Card.Header>
           <Card.Meta>
@@ -180,7 +191,8 @@ return(
           </Card.Description>
           <Card.Description
           textAlign='center'>
-            {initiator.address}
+          <h3>Shipping Address</h3>
+            {initiator[0].address}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
@@ -198,6 +210,7 @@ return(
 
         <Card.Content>
           <Card.Header>
+          <h2>{receiver[0].user_name}</h2>
             <h3>{traderBeer}</h3>
           </Card.Header>
           <Card.Meta>
@@ -209,6 +222,11 @@ return(
           </Card.Meta>
           <Card.Description>
             {receiverBeer[0].description}
+          </Card.Description>
+          <Card.Description
+          textAlign='center'>
+          <h3>Shipping Address</h3>
+            {receiver[0].address}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
@@ -239,7 +257,7 @@ return(
     trade={props.trade}
     refreshMessages={props.refreshMessages}
   />
-
+  </Segment>
   </div>
 )
 }

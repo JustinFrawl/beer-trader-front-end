@@ -8,8 +8,12 @@ const BeerDetail = (props) => {
   if(!props.beer) {
     return(
     <div>
-    <h1>Welcome!
-                  Take a closer look at each beers stats!!!</h1>
+
+                  <Header
+                          as='h1'
+                          content='Welcome, Select a Beer Or List a New One'
+                          style={{color: 'white'}}
+                          />
                   <NewBeerForm/>
 
 
@@ -19,9 +23,8 @@ const BeerDetail = (props) => {
 return(
 <div>
 
-  <div>
-<h1>  {props.beer.name} </h1>
-  </div>
+<div>
+</div>
 
   <Card>
 

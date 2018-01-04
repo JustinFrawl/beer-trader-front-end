@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import withAuth from './hocs/withAuth.js';
-import { Grid, Segment, Button, Container } from 'semantic-ui-react';
+import { Grid, Segment, Button, Container, Sticky, Visibility } from 'semantic-ui-react';
 import Beers from './Beers.js';
 import Beer from './Beer.js';
 import BeerDetail from './BeerDetail.js';
@@ -70,12 +70,10 @@ messageUpdate = () => {
 
     return (
             <div>
-            <Container style={{marginTop: '1em'}}>
+            <Container>
               <Grid columns={2} divided>
                 <Grid.Row stretched>
                   <Grid.Column width={4}>
-
-              <Segment>
               <BeerSearchBar
               searchTerm={this.state.searchTerm}
               handleSearchTerm={searchTerm => this.setState({searchTerm})}
@@ -89,7 +87,6 @@ messageUpdate = () => {
                 searchBeers={this.filterResults()}
                 user={this.props.user}
                 />
-              </Segment>
             </Grid.Column>
             <Grid.Column width={12}>
               <BeerDetail

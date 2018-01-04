@@ -2,7 +2,7 @@ import React from 'react'
 import withAuth from './hocs/withAuth';
 import Beer from './Beer.js';
 import { Link} from 'react-router-dom';
-import {Card, Button} from 'semantic-ui-react';
+import {Card, Button, Header} from 'semantic-ui-react';
 
 
 
@@ -48,16 +48,20 @@ const beerListItems = props.searchBeers.map((beer) => {
 });
 return(
 
-<div>
-  <h1>
-    All Beers Currently Available for Trade
-  </h1>
+<div style={{height:"70vh", maxHeight:"70vh", overflow: "auto"}}>
+  <Header
+          as='h1'
+          content='All Beers Currently Available for Trade'
+          style={{color: 'white'}}
+          />
   <Button basic color='blue'
     onClick={props.onButtonCLick}
     >
     Add a Beer
     </Button>
+
   {beerListItems}
+
 </div>
 )
 }

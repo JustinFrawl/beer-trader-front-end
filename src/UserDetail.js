@@ -6,15 +6,17 @@ const UserDetail = (props) => {
   if(!props.user) {
     return(
     <div>
-    <h1>Welcome!
-                  Take a closer look at each users stats!!!</h1>
-
-
+    <Header
+            as='h1'
+            content='Click on a User to See Their Stats'
+            style={{color: 'white'}}
+            />
     </div>
   )
   }
 return(
 <div>
+<Segment>
 
   <div>
 <h1>  {props.user.user_name} </h1>
@@ -37,6 +39,7 @@ return(
       </Grid.Column>
     </Grid.Row>
   </Grid>
+  </Segment>
   </div>
 )
 }

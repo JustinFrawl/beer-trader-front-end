@@ -63,10 +63,10 @@ handleDelete = (data) => {
               <Grid columns={2} divided>
                 <Grid.Row stretched>
                   <Grid.Column width={4}>
-
-              <Segment>
+              <div  style={{height:"70vh", maxHeight:"70vh", overflow: "auto"}}>
 
               <Trades
+
                 onTradeSelect={selectedTrade => this.setState({selectedTrade})}
                 onButtonCLick={selectedTrade => this.setState({selectedTrade: null})}
                 trades={this.props.trades}
@@ -74,7 +74,7 @@ handleDelete = (data) => {
                 beers={this.props.beers}
                 user={this.props.user}
                 />
-              </Segment>
+              </div>
             </Grid.Column>
             <Grid.Column width={12}>
               <TradeDetail

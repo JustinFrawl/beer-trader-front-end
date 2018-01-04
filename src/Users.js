@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import withAuth from './hocs/withAuth';
 import User from './User.js';
+import { Header } from 'semantic-ui-react';
 
 
 const Users = (props) => {
@@ -35,13 +36,15 @@ const userList = props.users.map((user) => {
 });
 return(
 
-<div>
-  <h1>
-    List of Users
-  </h1>
-  <ul>
+<div style={{height:"70vh", maxHeight:"70vh", overflow: "auto"}}>
+  <Header
+          as='h1'
+          content='List of Users'
+          style={{color: 'white'}}
+          />
+
   {userList}
-  </ul>
+
 </div>
 )
 }

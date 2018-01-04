@@ -34,6 +34,7 @@ const Trades = (props) => {
   };
 })
   return (
+
     <ul>
     <Button basic color='blue'
       onClick={props.onButtonCLick}
@@ -42,6 +43,7 @@ const Trades = (props) => {
       </Button>
     {renderTrade}
     </ul>
+
   )
 }
 

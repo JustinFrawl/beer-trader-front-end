@@ -6,7 +6,6 @@ const BeerSearchBar = (props) => {
   <div>
     <Form>
    <Form.Field>
-     <label>Auction Filter</label>
     <input
       className='Search'
       onChange={(e) => props.handleSearchTerm(e.target.value)}

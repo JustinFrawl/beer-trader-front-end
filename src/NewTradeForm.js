@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import * as actions from './actions';
 import Card from './Card.js';
 import withAuth from './hocs/withAuth';
+import {Segment} from 'semantic-ui-react';
 
 class NewTradeForm extends React.Component {
   constructor(props) {
@@ -60,6 +61,7 @@ class NewTradeForm extends React.Component {
     const { fields } = this.state;
     return (
       <div>
+      <Segment>
         {this.state.error ? <h1>Try Again</h1> : null}
         <div className="ui form">
           <form onSubmit={this.handleSubmit}>
@@ -95,6 +97,7 @@ class NewTradeForm extends React.Component {
             </button>
           </form>
         </div>
+        </Segment>
       </div>
     );
   }

@@ -40,13 +40,12 @@ componentDidMount(){
                 <Grid.Row stretched>
                   <Grid.Column width={4}>
 
-              <Segment>
+
 
               <Users
                 onUserSelect={selectedUser => this.setState({selectedUser})}
                 users={this.props.users}
                 />
-              </Segment>
             </Grid.Column>
             <Grid.Column width={12}>
               <UserDetail

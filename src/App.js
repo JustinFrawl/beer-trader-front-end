@@ -21,10 +21,10 @@ import BeersContainer from './BeersContainer.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{backgroundImage: "url('http://pocketfullofgrace.com/uploads/posts/1543219-beer__12.jpg')"}}>
       <Segment
             inverted
-            color='yellow'
+            color='black'
             textAlign='center'
             style={{ fontSize: '1em', fontWeight: 'normal', maxHeight: 253, padding: '1em 0em' }}
             vertical
@@ -33,13 +33,12 @@ class App extends Component {
       <Header
               as='h1'
               content='Beer Trader, Pokemon Cards for Grown Men'
-              style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: '1em', marginTop: '1em' }}
+              style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: '1em', marginTop: '1em', color: 'white' }}
             />
       </Container>
       <Container>
               <Menu pointing secondary size='massive' color='yellow'>
                 <Menu.Item as='a'><Link to="/profile">My Profile</Link></Menu.Item>
-                <Menu.Item as='a'><Link to='/mybeer'>Look at Your Beers!</Link></Menu.Item>
                 <Menu.Item as='a'><Link to="/users">Browser Users</Link></Menu.Item>
                 <Menu.Item as='a'><Link to="/mytrades">Manage Your Trades</Link></Menu.Item>
                 <Menu.Item as='a'><Link to="/search">Search Beers</Link></Menu.Item>
