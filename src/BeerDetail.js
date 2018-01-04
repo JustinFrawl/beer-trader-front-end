@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Segment, Image, Header, Card, Icon } from 'semantic-ui-react'
 import NewBeerForm from './NewBeerForm.js';
+import AddToBeersButton from './AddToBeersButton.js';
 
 
 const BeerDetail = (props) => {
@@ -22,23 +23,52 @@ return(
 <h1>  {props.beer.name} </h1>
   </div>
 
-  <Grid>
-    <Grid.Row>
-      <Grid.Column width={8}>
-      <Icon name='beer' size='large'/>
-        {props.beer.name}
-      </Grid.Column>
-      <Grid.Column width={8}>
-      </Grid.Column>
-    </Grid.Row>
+  <Card>
 
-    <Grid.Row>
-      <Grid.Column width={8}>
-      </Grid.Column>
-      <Grid.Column width={8}>
-      </Grid.Column>
-    </Grid.Row>
-  </Grid>
+    <Card.Content>
+      <Card.Header
+      textAlign='center'>
+        {props.beer.name}
+      </Card.Header>
+      <Card.Meta>
+        <span className='date'>
+        </span>
+      </Card.Meta>
+      <Card.Description
+      textAlign='center'>
+        <h3>Description:</h3>
+        {props.beer.description}
+      </Card.Description>
+      <Card.Description
+      textAlign='center'>
+        <h3>Style:</h3>
+        {props.beer.style}
+      </Card.Description>
+      <Card.Description
+      textAlign='center'>
+        <h3>ABV:</h3>
+        %{props.beer.abv}
+      </Card.Description>
+      <Card.Description
+      textAlign='center'>
+        <h3>Brewed by:</h3>
+        {props.beer.brewery}
+      </Card.Description>
+
+    </Card.Content>
+    <Card.Content extra>
+      <a>
+      <AddToBeersButton
+        beerID={props.beer.id}
+        userID={props.user.id}
+        addUserBeer={props.addUserBeer}
+      />
+
+      </a>
+    </Card.Content>
+    <Card.Content extra>
+    </Card.Content>
+  </Card>
   </div>
 )
 }

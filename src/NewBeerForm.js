@@ -83,7 +83,7 @@ class NewTradeForm extends React.Component {
               />
             </div>
             <div className="ui field">
-              <label>What Style is it?</label>
+              <label>Where is it brewed?</label>
               <input
                 name="brewery"
                 placeholder="brewery"

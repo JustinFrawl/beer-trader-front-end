@@ -35,7 +35,7 @@ const beerListItems = props.searchBeers.map((beer) => {
         <a>
           <button
             onClick={() => props.onBeerSelect(beer)}>
-              View This Trade
+              View This Beer
           </button>
 
         </a>

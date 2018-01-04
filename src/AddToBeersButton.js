@@ -32,7 +32,7 @@ class AddToBeersButton extends React.Component {
     <div>
       <Button
         positive
-        floated='right'
+        floated='center'
         onClick={this.handleClick}
         >
           Add To My Beers

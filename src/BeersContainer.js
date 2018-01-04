@@ -96,6 +96,7 @@ messageUpdate = () => {
                 beer={this.state.selectedBeer}
                 user={this.props.user}
                 users={this.props.users}
+                addUserBeer={this.props.addUserBeer}
                 />
             </Grid.Column>
           </Grid.Row>
