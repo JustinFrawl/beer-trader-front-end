@@ -59,7 +59,7 @@ handleDelete = (data) => {
 
     return (
             <div>
-            <Container>
+            <Container style={{marginTop: '1em'}}>
               <Grid columns={2} divided>
                 <Grid.Row stretched>
                   <Grid.Column width={4}>

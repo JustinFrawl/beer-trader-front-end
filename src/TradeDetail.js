@@ -5,7 +5,7 @@ import NewTradeForm from './NewTradeForm.js';
 import DeleteTradeButton from './DeleteTradeButton.js';
 import AcceptTradeButton from './AcceptTradeButton.js';
 
-import { Grid, Segment, Image, Header, Card, Button } from 'semantic-ui-react'
+import { Grid, Segment, Image, Header, Card, Button, Container } from 'semantic-ui-react'
 
 
 const TradeDetail = (props) => {
@@ -122,7 +122,13 @@ const TradeDetail = (props) => {
         </Grid.Column>
       </Grid.Row>
       </Grid>
+    <Segment
+      textAlign='center'
+    >
+    <Container>
     {messagesList}
+    </Container>
+    </Segment>
     <NewMessageForm
       traderName={traderName}
       userName={userName}
@@ -138,7 +144,11 @@ const TradeDetail = (props) => {
 return(
 
   <div>
-  <h1>{userName} is trading {traderName}</h1>
+  <Segment
+    textAlign='center'
+    >
+  <h1 textAlign='center'>{userName} is trading {traderName}</h1>
+
   <Grid columns={2} divided>
     <Grid.Row stretched>
       <Grid.Column width={8}>
@@ -199,7 +209,14 @@ return(
       </Grid.Column>
     </Grid.Row>
     </Grid>
-  {messagesList}
+    </Segment>
+    <Segment
+      textAlign='center'
+    >
+    <Container>
+    {messagesList}
+    </Container>
+    </Segment>
   <NewMessageForm
     traderName={traderName}
     userName={userName}

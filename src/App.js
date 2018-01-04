@@ -8,7 +8,7 @@ import * as actions from './actions';
 import UserBeers from './UserBeers';
 import NewTradeForm from './NewTradeForm.js';
 import SearchBeers from './SearchBeers';
-import { Header, Menu, Container, Button } from 'semantic-ui-react';
+import { Header, Menu, Container, Button, Segment } from 'semantic-ui-react';
 import Trades from './Trades.js';
 import NewBeerForm from './NewBeerForm.js';
 import RegisterUser from './RegisterUser.js';
@@ -21,12 +21,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+      <Segment
+            inverted
+            color='yellow'
+            textAlign='center'
+            style={{ fontSize: '1em', fontWeight: 'normal', maxHeight: 253, padding: '1em 0em' }}
+            vertical
+          >
       <Container>
       <Header
               as='h1'
               content='Beer Trader, Pokemon Cards for Grown Men'
-              style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: '2em', marginTop: '2em' }}
+              style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: '1em', marginTop: '1em' }}
             />
       </Container>
       <Container>
@@ -55,6 +61,7 @@ class App extends Component {
                 </Menu.Item>
               </Menu>
             </Container>
+          </Segment>
 
         <Switch>
           <Route path="/register" component={RegisterUser} />

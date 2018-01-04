@@ -55,8 +55,16 @@ const authReducer = (state = initialState, action) => {
       })
       return {...state, trades: tradeRemoved}
     case 'ACCEPT_TRADE':
+      debugger
       const acceptedTrade = action.user;
-      const fullTrades = [...state.trades, acceptedTrade];
+      const fullTrades = state.trades.filter(trade => {
+        debugger
+        if(trade.id === acceptedTrade.id){
+          trade = acceptedTrade
+          return trade
+        }
+      })
+      debugger
       return {...state, trades: fullTrades};
 
     default:
