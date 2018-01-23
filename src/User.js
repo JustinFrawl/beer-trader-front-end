@@ -16,7 +16,6 @@ const User = (props) => {
           </span>
         </Card.Meta>
         <Card.Description>
-        HI
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -29,7 +28,6 @@ const User = (props) => {
         </a>
       </Card.Content>
       <Card.Content extra>
-      Hey there
       </Card.Content>
     </Card>
 
