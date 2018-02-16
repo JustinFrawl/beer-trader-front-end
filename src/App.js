@@ -32,7 +32,7 @@ class App extends Component {
       <Container>
       <Header
               as='h1'
-              content='Beer Trader, Pokemon Cards for Grown Men'
+              content='Beer Trader: Pokemon Cards for Grown Men'
               style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: '1em', marginTop: '1em', color: 'white' }}
             />
       </Container>
