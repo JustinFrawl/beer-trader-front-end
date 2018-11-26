@@ -21,7 +21,7 @@ import BeersContainer from './BeersContainer.js';
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{backgroundImage: "url('http://pocketfullofgrace.com/uploads/posts/1543219-beer__12.jpg')"}}>
+      <div className="App" style={{backgroundImage: "url('https://cdn.hipwallpaper.com/i/5/84/wfnO6K.jpg')"}}>
       <Segment
             inverted
             color='black'
