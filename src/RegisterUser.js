@@ -27,7 +27,6 @@ class RegisterUser extends React.Component {
     e.preventDefault();
     const { fields: { user_name, password } } = this.state;
     this.props.registerUser(user_name, password);
-    this.props.loginUser(user_name, password, this.props.history);
   };
 
   render() {

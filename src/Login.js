@@ -12,8 +12,8 @@ class Login extends React.Component {
     this.state = {
       error: false,
       fields: {
-        user_name: '',
-        password: ''
+        user_name: 'frawlcity',
+        password: 'kenneth'
       }
     };
   }
